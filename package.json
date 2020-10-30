@@ -1,0 +1,15 @@
+{
+  "name": "chioio.github.io",
+  "version": "1.0.0",
+  "description": "chioio GitHub Page.",
+  "repository": "https://github.com/chioio/chioio.github.io.git",
+  "author": "Tenn Chio <Tenn_Chio@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.7.1"
+  }
+}
