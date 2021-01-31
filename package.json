@@ -1,15 +1,38 @@
 {
   "name": "chioio.github.io",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "chioio GitHub Page.",
   "repository": "https://github.com/chioio/chioio.github.io.git",
   "author": "Tenn Chio <Tenn_Chio@icloud.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
   },
-  "devDependencies": {
-    "vuepress": "^1.7.1"
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@mdx-js/react": "^1.6.21",
+    "clsx": "^1.1.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
