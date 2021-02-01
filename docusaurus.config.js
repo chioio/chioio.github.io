@@ -1,31 +1,46 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Tenn Chio',
+  tagline: 'Build Self - Build World.',
+  url: 'https://chioio.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'chioio',
+  projectName: 'chioio.github.io',
   themeConfig: {
+    algolia: {
+      apiKey: '47ecd3b21be71c5822571b9f59e52544',
+      indexName: 'docusaurus-2',
+      contextualSearch: true,
+    },
     navbar: {
-      title: 'My Site',
+      title: 'Tenn Chio',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'IO Logo',
+        // src: theme === 'light'
+        //   ? 'img/logo-dark.svg'
+        //   : 'img/logo-light.svg',
+        src: 'img/logo-light.svg',
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
+          to: 'records/',
+          activeBasePath: 'records',
+          label: 'Records',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        { to: 'blogs', label: 'Blogs', position: 'left' },
+        // right
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          to: 'resume',
+          label: 'Resume',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/chioio',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -34,50 +49,70 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'RECORDS',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'JavaScript',
+              to: 'records/javascript/',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: 'Vue',
+              to: 'records/vue/',
+            },
+            {
+              label: 'React',
+              to: 'records/react/',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'BLOGS',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: '2021',
+              to: 'blogs/2021/',
+            },
+          ],
+        },
+        {
+          title: 'PROJECTS',
+          items: [
+            {
+              label: 'Ant Fortune Desktop',
+              href: 'https://github.com/chioio/ant-fortune-desktop',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Vue 3.0 Resolve',
+              href: 'https://github.com/chioio/vue3.0-resolve',
+            },
+            {
+              label: 'Vue 2.0 Resolve',
+              href: 'https://github.com/chioio/vue2.0-resolve',
+            },
+          ],
+        },
+        {
+          title: 'SOCIALS',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/chioio',
+            },
+            {
+              label: 'Juejin',
+              href: 'https://juejin.cn/user/1521379825688637',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://twitter.com/Tenn_Chio',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `
+        Copyright © ${new Date().getFullYear()} Tenn Chio. <br> 
+        Powered by <a href="https://pages.github.com">GitHub Page</a>, built by <a href="https://v2.docusaurus.io/">Docusaurus</a>.
+      `,
     },
   },
   presets: [
@@ -97,9 +132,10 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],
   ],
-};
+  plugins: ['docusaurus-plugin-sass'],
+}
