@@ -49,12 +49,12 @@ module.exports = {
         '⭐️ If you like this docusaurus theme, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chioio.github.io">GitHub</a>! ⭐️',
     },
     navbar: {
-      title: 'Tenn Chio',
-      logo: {
-        alt: 'Logo',
-        src: 'img/logo-dark.svg',
-        srcDark: 'img/logo-light.svg',
-      },
+      title: '\\ioi/',
+      // logo: {
+      //   alt: 'Logo',
+      //   src: 'img/logo-dark.svg',
+      //   srcDark: 'img/logo-light.svg',
+      // },
       items: [
         //left
         {
