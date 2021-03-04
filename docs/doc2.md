@@ -1,5 +1,5 @@
 ---
-id: doc2
+id: vue-router
 title: Document Number 2
 ---
 

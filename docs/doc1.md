@@ -1,6 +1,6 @@
 ---
-id: doc1
-title: Style Guide
+id: vue
+title: Vue
 sidebar_label: Style Guide
 slug: /
 ---

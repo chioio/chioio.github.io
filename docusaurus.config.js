@@ -8,72 +8,87 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'chioio',
   projectName: 'chioio.github.io',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          path: 'docs',
+          sidebarPath: require.resolve('./sidebars.js'),
+          // editUrl: '',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+        },
+        blog: {
+          path: 'blogs',
+          // editUrl: '',
+          // postsPerPages: 3,
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear} Tenn Chio.`,
+          },
+          showReadingTime: true,
+          // editUrl: '',
+        },
+        theme: {
+          customCss: [require.resolve('./src/css/custom.scss')],
+        },
+      },
+    ],
+  ],
   themeConfig: {
-    algolia: {
-      apiKey: '47ecd3b21be71c5822571b9f59e52544',
-      indexName: 'docusaurus-2',
-      contextualSearch: true,
+    hideableSidebar: false,
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    announcementBar: {
+      id: 'support',
+      content:
+        '⭐️ If you like this docusaurus theme, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chioio.github.io">GitHub</a>! ⭐️',
     },
     navbar: {
       title: 'Tenn Chio',
       logo: {
-        alt: 'IO Logo',
-        // src: theme === 'light'
-        //   ? 'img/logo-dark.svg'
-        //   : 'img/logo-light.svg',
-        src: 'img/logo-light.svg',
+        alt: 'Logo',
+        src: 'img/logo-dark.svg',
+        srcDark: 'img/logo-light.svg',
       },
       items: [
+        //left
         {
-          to: 'records/',
-          activeBasePath: 'records',
+          to: 'docs',
           label: 'Records',
           position: 'left',
         },
-        { to: 'blogs', label: 'Blogs', position: 'left' },
-        // right
+        {
+          to: 'blog',
+          label: 'Blog',
+          position: 'left',
+        },
         {
           to: 'resume',
           label: 'Resume',
+          position: 'left',
+        },
+        // right
+        {
+          href: 'https://juejin.cn/user/1521379825688637',
+          className: 'header-juejin-link',
+          'aria-label': 'Juejin',
           position: 'right',
         },
         {
           href: 'https://github.com/chioio',
           className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          'aria-label': 'GitHub',
           position: 'right',
         },
       ],
     },
     footer: {
-      style: 'dark',
       links: [
-        {
-          title: 'RECORDS',
-          items: [
-            {
-              label: 'JavaScript',
-              to: 'records/javascript/',
-            },
-            {
-              label: 'Vue',
-              to: 'records/vue/',
-            },
-            {
-              label: 'React',
-              to: 'records/react/',
-            },
-          ],
-        },
-        {
-          title: 'BLOGS',
-          items: [
-            {
-              label: '2021',
-              to: 'blogs/2021/',
-            },
-          ],
-        },
         {
           title: 'PROJECTS',
           items: [
@@ -92,7 +107,10 @@ module.exports = {
           ],
         },
         {
-          title: 'SOCIALS',
+          title: 'FRIENDLY LINKS',
+        },
+        {
+          title: 'SOCIALS NETWORK',
           items: [
             {
               label: 'GitHub',
@@ -115,27 +133,5 @@ module.exports = {
       `,
     },
   },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
-        },
-      },
-    ],
-  ],
   plugins: ['docusaurus-plugin-sass'],
 }

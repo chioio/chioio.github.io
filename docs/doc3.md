@@ -1,5 +1,5 @@
 ---
-id: doc3
+id: vuex
 title: This is Document Number 3
 ---
 
