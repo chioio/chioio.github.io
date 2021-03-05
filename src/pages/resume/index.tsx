@@ -12,7 +12,7 @@ function Resume() {
     <Layout title={TITLE}>
       <main>
         <h1>Resume page</h1>
-      </main>{' '}
+      </main>
     </Layout>
   )
 }

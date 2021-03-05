@@ -12,13 +12,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          path: 'docs',
-          sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl: '',
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-        },
+        docs: false,
         blog: {
           path: 'blogs',
           // editUrl: '',
@@ -58,9 +52,30 @@ module.exports = {
       items: [
         //left
         {
-          to: 'docs',
           label: 'Records',
           position: 'left',
+          items: [
+            {
+              to: 'docs/records/html_css',
+              label: 'HTML & CSS',
+            },
+            {
+              to: 'docs/records/js_ts',
+              label: 'JS & TS',
+            },
+            {
+              to: 'docs/records/vue',
+              label: 'Vue',
+            },
+            {
+              to: 'docs/records/react',
+              label: 'React',
+            },
+            {
+              to: 'docs/records/mess',
+              label: 'Mess',
+            },
+          ],
         },
         {
           to: 'blog',
@@ -133,5 +148,62 @@ module.exports = {
       `,
     },
   },
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'html_css-records',
+        path: 'docs/records/html_css',
+        routeBasePath: 'docs/records/html_css',
+        sidebarPath: require.resolve('./docs/records/html_css/sidebar.ts'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'js_ts-records',
+        path: 'docs/records/js_ts',
+        routeBasePath: 'docs/records/js_ts',
+        sidebarPath: require.resolve('./docs/records/js_ts/sidebar.ts'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'vue-records',
+        path: 'docs/records/vue',
+        routeBasePath: 'docs/records/vue',
+        sidebarPath: require.resolve('./docs/records/vue/sidebar.ts'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'react-records',
+        path: 'docs/records/react',
+        routeBasePath: 'docs/records/react',
+        sidebarPath: require.resolve('./docs/records/react/sidebar.ts'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'mess-records',
+        path: 'docs/records/mess',
+        routeBasePath: 'docs/records/mess',
+        sidebarPath: require.resolve('./docs/records/mess/sidebar.ts'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+  ],
 }
