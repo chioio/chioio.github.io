@@ -1,0 +1,48 @@
+:root {
+  --ifm-color-tech-logo: #000000;
+  --ifm-color-tech-logo-lighter: #404040;
+  --ifm-color-tech-logo-normal: #000000;
+}
+
+html[data-theme="dark"] {
+  --ifm-color-tech-logo: #c0c0c0;
+  --ifm-color-tech-logo-lighter: #FFFFFF;
+  --ifm-color-tech-logo-normal: #FFFFFF;
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+}
+
+.techStack {
+  padding-bottom: 4rem;
+}
+
+.tech {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  width: 100%;
+
+  .techImg {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+

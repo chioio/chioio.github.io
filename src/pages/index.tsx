@@ -1,81 +1,91 @@
-import React from 'react';
-import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.scss';
+import React from 'react'
+import clsx from 'clsx'
+import Layout from '@theme/Layout'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import styles from './styles.module.scss'
 
-const features = [
-  {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
+const TITLE = 'Hi!'
+const DESCRIPTION = "Tenn's page."
 
-function Feature({imageUrl, title, description}) {
-  const imgUrl = useBaseUrl(imageUrl);
+type Tech = {
+  title: string
+  logoUrl: string
+}
+
+const techs: Tech[] = [
+  {
+    title: 'Javascript',
+    logoUrl: 'img/techs-logo.svg#javascript',
+  },
+  {
+    title: 'Vue.js',
+    logoUrl: 'img/techs-logo.svg#vue',
+  },
+  {
+    title: 'Nuxt.js',
+    logoUrl: 'img/techs-logo.svg#nuxt'
+  },
+  {
+    title: 'React.js',
+    logoUrl: 'img/techs-logo.svg#react'
+  },
+  {
+    title: 'Next.js',
+    logoUrl: 'img/techs-logo.svg#next'
+  },
+  {
+    title: 'Flutter',
+    logoUrl: 'img/techs-logo.svg#flutter'
+  },
+  {
+    title: 'Docker',
+    logoUrl: 'img/techs-logo.svg#docker'
+  },
+]
+
+function TechItem({ title, logoUrl }: Tech): JSX.Element {
   return (
-    <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className={clsx('col col--2', styles.tech)}>
+      <div className="text--center">
+        <svg width="64" height="64">
+          <use xlinkHref={useBaseUrl(logoUrl)}></use>
+        </svg>
+        <h3>{title}</h3>
+      </div>
     </div>
-  );
+  )
+}
+
+function TechStackSection(): JSX.Element {
+  return (
+    <section className={styles.techStack}>
+      <div className="container">
+        <h2 className={styles.sectionTitle}>Technology Stack</h2>
+        <div className="row">
+          {techs.map((props, idx) => (
+            <TechItem key={idx} {...props} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">  
-      <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-      </main>
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">{siteConfig.title}</h1>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+        </div>
+      </header>
+      <main>{techs && techs.length > 0 && <TechStackSection />}</main>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home
