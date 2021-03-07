@@ -15,8 +15,12 @@ type Tech = {
 
 const techs: Tech[] = [
   {
-    title: 'Javascript',
+    title: 'JavaScript',
     logoUrl: 'img/techs-logo.svg#javascript',
+  },
+  {
+    title: 'TypeScript',
+    logoUrl: 'img/techs-logo.svg#typescript',
   },
   {
     title: 'Vue.js',
@@ -24,34 +28,42 @@ const techs: Tech[] = [
   },
   {
     title: 'Nuxt.js',
-    logoUrl: 'img/techs-logo.svg#nuxt'
+    logoUrl: 'img/techs-logo.svg#nuxt',
   },
   {
     title: 'React.js',
-    logoUrl: 'img/techs-logo.svg#react'
+    logoUrl: 'img/techs-logo.svg#react',
   },
   {
     title: 'Next.js',
-    logoUrl: 'img/techs-logo.svg#next'
+    logoUrl: 'img/techs-logo.svg#next',
+  },
+  {
+    title: 'Node.js',
+    logoUrl: 'img/techs-logo.svg#node',
+  },
+  {
+    title: 'Deno',
+    logoUrl: 'img/techs-logo.svg#deno',
   },
   {
     title: 'Flutter',
-    logoUrl: 'img/techs-logo.svg#flutter'
+    logoUrl: 'img/techs-logo.svg#flutter',
   },
   {
     title: 'Docker',
-    logoUrl: 'img/techs-logo.svg#docker'
+    logoUrl: 'img/techs-logo.svg#docker',
   },
 ]
 
 function TechItem({ title, logoUrl }: Tech): JSX.Element {
   return (
-    <div className={clsx('col col--2', styles.tech)}>
+    <div className={styles.tech}>
       <div className="text--center">
-        <svg width="64" height="64">
+        <svg className={styles.techImg}>
           <use xlinkHref={useBaseUrl(logoUrl)}></use>
         </svg>
-        <h3>{title}</h3>
+        <div className={styles.techTitle}>{title}</div>
       </div>
     </div>
   )
@@ -61,10 +73,10 @@ function TechStackSection(): JSX.Element {
   return (
     <section className={styles.techStack}>
       <div className="container">
-        <h2 className={styles.sectionTitle}>Technology Stack</h2>
-        <div className="row">
-          {techs.map((props, idx) => (
-            <TechItem key={idx} {...props} />
+        <h1 className={styles.sectionTitle}>Technology Stack</h1>
+        <div className={clsx('row', styles.techRow)}>
+          {techs.map((props, id) => (
+            <TechItem key={id} {...props} />
           ))}
         </div>
       </div>
