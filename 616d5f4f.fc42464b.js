@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{84:function(e,n,t){"use strict";t.r(n);var a=t(0),u=t.n(a),l=t(105);n.default=function(){return u.a.createElement(l.a,{title:"Resume"},u.a.createElement("main",null,u.a.createElement("h1",null,"Resume page")))}}}]);

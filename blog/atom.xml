@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://chioio.github.io/blog</id>
+    <title>Tenn Chio Blog</title>
+    <updated>2021-03-03T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://chioio.github.io/blog"/>
+    <subtitle>Tenn Chio Blog</subtitle>
+    <icon>https://chioio.github.io/img/favicon.ico</icon>
+    <rights>Copyright © function getFullYear() { [native code] } Tenn Chio.</rights>
+    <entry>
+        <title type="html"><![CDATA[First using the Docusaurus]]></title>
+        <id>First using the Docusaurus</id>
+        <link href="https://chioio.github.io/blog/2021/03/03/first-using-the-docusaurus"/>
+        <updated>2021-03-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are very happy to introduce Docusaurus to help you manage one or many open source websites.]]></summary>
+    </entry>
+</feed>
