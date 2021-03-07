@@ -40,7 +40,7 @@ module.exports = {
     announcementBar: {
       id: 'support',
       content:
-        '⭐️ If you like this docusaurus theme, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chioio.github.io">GitHub</a>! ⭐️',
+        '⭐️ Like this theme? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chioio/chioio.github.io">GitHub</a>! ⭐️',
     },
     navbar: {
       title: '\\ioi/',
