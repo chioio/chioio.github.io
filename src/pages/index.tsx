@@ -89,10 +89,13 @@ function Home() {
   const { siteConfig = {} } = context
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={styles.heroBanner}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+          <h2 className={styles.tagline}>{siteConfig.tagline}</h2>
+          <div>
+            <p className={styles.profile}>{siteConfig.customFields.profile}</p>
+          </div>
         </div>
       </header>
       <main>{techs && techs.length > 0 && <TechStackSection />}</main>

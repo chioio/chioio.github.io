@@ -1,20 +1,42 @@
 :root {
+  --ifm-color-hero-banner-bg: #F5F6F7;
+  --ifm-color-profile-text: #858585;
   --ifm-color-tech-logo: #000000;
   --ifm-color-tech-logo-lighter: #404040;
   --ifm-color-tech-logo-normal: #000000;
 }
 
 html[data-theme='dark'] {
+  --ifm-color-hero-banner-bg: #1C1E21;
+  --ifm-color-profile-text: #BFBFBF;
   --ifm-color-tech-logo: #c0c0c0;
   --ifm-color-tech-logo-lighter: #ffffff;
   --ifm-color-tech-logo-normal: #ffffff;
 }
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.heroBanner{
+  height: 40rem;
+  padding: 4rem;
   position: relative;
   overflow: hidden;
+  background-color: var(--ifm-color-hero-banner-bg);
+  .heroTitle {
+    font-size: 5rem;
+    font-weight: 900;
+  }
+  .tagline {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .profile {
+    display: inline-block;
+    width: 60%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ifm-color-profile-text);
+    --gap-ratio: 1;
+    margin: 0;
+  }
 }
 
 .sectionTitle {
@@ -104,8 +126,29 @@ html[data-theme='dark'] {
 }
 
 @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
+  .heroBanner{
+    height: 30rem;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--ifm-color-hero-banner-bg);
+    .heroTitle {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    .profile {
+      display: inline-block;
+      width: 100%;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--ifm-color-profile-text);
+      --gap-ratio: 1;
+      margin: 0;
+    }
   }
 
   .sectionTitle {
@@ -193,4 +236,3 @@ html[data-theme='dark'] {
     }
   }
 }
-
