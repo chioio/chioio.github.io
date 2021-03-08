@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Tenn Chio',
-  tagline: 'Build Self - Build World.',
+  title: 'chioio',
+  tagline: 'Build self, build world.',
   url: 'https://chioio.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -148,8 +148,35 @@ module.exports = {
       `,
     },
   },
+  customFields: {
+    profile:
+      "Hi! This is Tenn Chio, a front-end developer. I'm major in use JavaScript/TypeScript to develop apps.",
+  },
   plugins: [
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/favicon.ico',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#ff5722',
+          },
+        ],
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
